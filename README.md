@@ -4,16 +4,15 @@ This project creates a scalable tic tac toe game that can be a normal board of 3
 
 The purpose of the project was to create a fun programming project to help my cousin gain interest in programming and help him understand the basics of coding concepts such as variables, loops, and arrays.
 
-Example of 3x3 board:
+Example of 3x3 board:  
 ![image](https://user-images.githubusercontent.com/103860247/204161645-84c9b6a8-e28e-4ac9-bee9-70f8be3b4981.png)
 
-Example of 26x26 board:
-
+Example of 26x26 board:  
 ![image](https://user-images.githubusercontent.com/103860247/204161604-a049f7d7-894e-416b-a025-90b393964a85.png)
 
-Example of game running:
+Example of game running:  
 ![image](https://user-images.githubusercontent.com/103860247/204161710-406e972d-66f1-4d54-90fa-29882bba2062.png)
 
-Example of game being finished:
+Example of game being finished:  
 ![image](https://user-images.githubusercontent.com/103860247/204161861-22453701-e1d0-4f62-b02f-911f8a9df11c.png)
 
