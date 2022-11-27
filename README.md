@@ -1,18 +1,17 @@
-## Getting Started
+## Scalable Tic-Tac-Toe Game
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+This project creates a scalable tic tac toe game that can be a normal board of 3x3 and can scale up to 26x26. It also features the option to adjust how many consecutive values needed to win a game. By default a tic tac toe game would need 3 in a row, but if we have a board of 7x7 we can adjust is to 5 in a row or 7 in a row.
 
-## Folder Structure
+The purpose of the project was to create a fun programming project to help my cousin gain interest in programming and help him understand the basics of coding concepts such as variables, loops, and arrays.
 
-The workspace contains two folders by default, where:
+Example of 3x3 board:
+![image](https://user-images.githubusercontent.com/103860247/204161645-84c9b6a8-e28e-4ac9-bee9-70f8be3b4981.png)
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Example of 26x26 board:
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+![image](https://user-images.githubusercontent.com/103860247/204161604-a049f7d7-894e-416b-a025-90b393964a85.png)
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Example of game running:
+![image](https://user-images.githubusercontent.com/103860247/204161710-406e972d-66f1-4d54-90fa-29882bba2062.png)
 
-## Dependency Management
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
