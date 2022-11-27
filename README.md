@@ -14,4 +14,6 @@ Example of 26x26 board:
 Example of game running:
 ![image](https://user-images.githubusercontent.com/103860247/204161710-406e972d-66f1-4d54-90fa-29882bba2062.png)
 
+Example of game being finished:
+![image](https://user-images.githubusercontent.com/103860247/204161861-22453701-e1d0-4f62-b02f-911f8a9df11c.png)
 
