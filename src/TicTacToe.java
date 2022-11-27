@@ -61,24 +61,6 @@ public class TicTacToe {
 
         var ticTacToeBoard = CreateTicTacToeBoard(boardSize);
         PrintTicTacToeBoard(ticTacToeBoard);
-        /*
-         * boolean isCorrectOpponent = false;
-         * 
-         * while (!isCorrectOpponent) {
-         * System.out.println(
-         * "Would you like to play against a local player or against the computer? Type P to play against Player and C to play against a computer!"
-         * );
-         * String inputText = myScanner.nextLine();
-         * 
-         * if (inputText.toUpperCase().equals("P") ||
-         * inputText.toUpperCase().equals("C"))
-         * isCorrectOpponent = true;
-         * else
-         * System.out.println(
-         * "You entered a wrong input. Please type P to play against a Player or C to play against the computer.\n"
-         * );
-         * }
-         */
 
         boolean isGameFinished = false;
         String player_turn = DetermineFirstTurn();
@@ -118,11 +100,6 @@ public class TicTacToe {
                     } else {
                         isGameFinished = true;
                         number_of_turns++;
-                        /*
-                         * System.out.println("Congraluations, " + player_turn +
-                         * " Won! Total turns to win: "
-                         * + number_of_turns + "\n.");
-                         */
                     }
 
                 } else
@@ -131,8 +108,6 @@ public class TicTacToe {
             else
                 System.out.println(player_turn
                         + " entered an incorrect user input. User must enter the column alphabet and then the row number (Ex: A1 or B3)\n");
-
-            // number_of_turns++;
         }
     }
 
@@ -165,8 +140,8 @@ public class TicTacToe {
         boolean canGameHaveWinner = number_of_turns + 1 >= (consecutiveValuesToWinMatch * 2 - 1);
         //Not enough moves in the game have been made to determine a winner.
         //for a 3x3 tic tac toe board, a minimum of 5 turns must be made to determine a winner.
-        // if (!canGameHaveWinner)
-        //     return false;
+        if (!canGameHaveWinner)
+            return false;
 
         var input_move = GetInputBoardMove(input_board_move);
         var playerTicTacToeChar = GetPlayerChar(isPlayerOneTurn);
@@ -213,17 +188,9 @@ public class TicTacToe {
         else
             input_val_to_use = input_col_num;
 
-        /*
-         * if (isVertical)
-         * input_val_to_use = input_row_num;
-         * else
-         * input_val_to_use = input_col_num;
-         */
-
         int startRowValue = input_val_to_use - consecutiveValuesToMatch + 1;
         int endRowValue = input_val_to_use + consecutiveValuesToMatch;
-        // int startRowValue = input_val_to_use - consecutiveValuesToMatch;
-        // int endRowValue = input_val_to_use;
+
         // Must first check horizontally up from current move if ticTacToe match is
         // found.
         if (startRowValue < 0)
@@ -253,11 +220,6 @@ public class TicTacToe {
                 sameCharacterFound = 0;
 
         }
-
-        // System.out.println(checkPosition.toUpperCase() + " CHECK - input_val_to_use = " + input_val_to_use
-        //         + ". startRowValue = " + startRowValue +
-        //         ". endRowValue = " + endRowValue + ". sameCharFoundUp = " +
-        //         sameCharacterFound);
 
         return false;
     }
@@ -291,15 +253,9 @@ public class TicTacToe {
                 int endRowValue = input_row_num + consecutiveValuesToMatch;
                 
                 if (endRowValue > ticTacToeBoard.length)
-                    endRowValue = ticTacToeBoard.length;
-                int endColValue = yValue;      
+                    endRowValue = ticTacToeBoard.length;   
                 
                 int sameCharacterFound = 0;
-                // boolean horizontalLeftOrUpMatch = false;
-                System.out.println(checkPosition.toUpperCase() + " CHECK - input_row_num = " + input_row_num + " input_col_num = " + input_col_num
-                + ". startRowValue = " + startRowValue +
-                ". endRowValue = " + endRowValue + ". startColValue = " + startColValue + ". endColValue = " + endColValue + ". sameCharFoundUp = " +
-                sameCharacterFound); 
 
                 int y = startColValue;
                 for (int x = startRowValue; x < endRowValue; x++) {
@@ -313,11 +269,6 @@ public class TicTacToe {
                                 return true;
                         } else
                             sameCharacterFound = 0;
-
-                        System.out.println(checkPosition.toUpperCase() + " CHECK - x = " + (x+1) + " y = " + (y+1)
-                            + ". current_pos_char = " + current_pos_char +
-                            "." + " sameCharFound = " +
-                            sameCharacterFound);
                         
                         y++; //increment column. 
                         
@@ -325,11 +276,6 @@ public class TicTacToe {
                         if (y == ticTacToeBoard[x].length)
                             break;
                 }
-        
-                // System.out.println(checkPosition.toUpperCase() + " CHECK - input_val_to_use = " + input_val_to_use
-                //         + ". startRowValue = " + startRowValue +
-                //         ". endRowValue = " + endRowValue + ". sameCharFoundUp = " +
-                //         sameCharacterFound);
         
                 return false;
             }
@@ -339,12 +285,8 @@ public class TicTacToe {
                 var input_row_num = input_move.pair_value_one;
                 var input_col_num = input_move.pair_value_two;                
 
-                // int startRowValue = input_row_num - consecutiveValuesToMatch + 1;
-                //int endRowValue = input_row_num + consecutiveValuesToMatch;
-
                 //Get Diagnal Right Starting Point Pair.
                 //Must include the cell player chose so have to increment or decrement by 1.
-
 
                  //add 1 as we are also including the place the person marks the cell.
                  int xValue = input_row_num - 1;
@@ -368,13 +310,11 @@ public class TicTacToe {
                 //Get Diagnal Right Ending Point pair
                 //Must include the cell player chose so have to increment or decrement by 1.
                 int diagnalRightEndingRow = input_row_num - consecutiveValuesToMatch + 1;
-                // int diagnalRightEndingCol = input_col_num + consecutiveValuesToMatch - 1;
+
 
                 if (diagnalRightEndingRow < 0)
                     diagnalRightEndingRow = 0;
 
-                // if (diagnalRightEndingCol >= ticTacToeBoard.length)
-                //     diagnalRightEndingCol = ticTacToeBoard.length - 1;
 
                 int y = diagnalRightStartingCol;
                 int sameCharacterFound = 0;
@@ -390,12 +330,7 @@ public class TicTacToe {
                     } else
                         sameCharacterFound = 0;
 
-                    System.out.println(checkPosition.toUpperCase() + " CHECK DIAG2 - x = " + (x+1) + " y = " + (y+1)
-                    + ". diagnalRightStartingRow = " + diagnalRightStartingRow
-                    + ". diagnalRightEndingRow = " + diagnalRightEndingRow
-                    + ". current_pos_char = " + current_pos_char +
-                        "." + " sameCharFound = " +
-                        sameCharacterFound);
+                    
                     
                     y++; //increment column. 
                     
@@ -409,14 +344,7 @@ public class TicTacToe {
 
 
     private static boolean isValidMove(String input_board_move, char ticTacToeBoard[][]) {
-        /*
-         * char columnAlphabet = Character.toUpperCase(input_board_move.charAt(0));
-         * //Since array index start at 0 subtract 1.
-         * int row_number = Integer.parseInt(input_board_move.substring(1,
-         * input_board_move.length())) - 1;
-         * //Since array index start at 0 subtract 1.
-         * int col_number = GetColIndexFromAlphabet(columnAlphabet) - 1;
-         */
+        
         var input_move = GetInputBoardMove(input_board_move);
         int row_number = input_move.pair_value_one;
         int col_number = input_move.pair_value_two;
